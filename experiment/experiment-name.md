@@ -1,1 +1,1 @@
-## Experiment name
+## Design of RC Isolated Footing with Axial Load and Bending Moment 

@@ -1,0 +1,60 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "If the axial load on a footing increases, what is the most effective way to maintain structural safety?",
+      "answers": {
+        "a": "Decrease footing thickness",
+        "b": "Increase reinforcement and footing dimensions",
+        "c": "Reduce the grade of concrete used",
+        "d": "Ignore the change as concrete has high compressive strength"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What happens if the soil bearing capacity is lower than expected?",
+      "answers": {
+        "a": "The footing size should be increased",
+        "b": "The reinforcement should be decreased",
+        "c": "The column size should be reduced",
+        "d": "The load should be increased"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How does an eccentric axial load affect the footing design?",
+      "answers": {
+        "a": "Creates additional bending moment",
+        "b": "Reduces reinforcement requirements",
+        "c": "Has no impact on footing size",
+        "d": "Increases only the column dimensions"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which failure mode is most critical in an RC isolated footing under high axial load?",
+      "answers": {
+        "a": "Bending failure",
+        "b": "Punching shear failure",
+        "c": "Torsional failure",
+        "d": "Lateral buckling"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "If the depth of the footing is increased significantly, which of the following statements is true?",
+      "answers": {
+        "a": "Bending moment decreases, but punching shear increases",
+        "b": "Both bending moment and shear force increase",
+        "c": "The load-carrying capacity decreases",
+        "d": "There is no impact on structural performance"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}

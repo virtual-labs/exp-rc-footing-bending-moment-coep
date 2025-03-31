@@ -1,0 +1,60 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the primary function of an RC isolated footing?",
+      "answers": {
+        "a": "To transfer loads from columns to soil safely",
+        "b": "To provide aesthetic appeal to the structure",
+        "c": "To resist lateral loads only",
+        "d": "To act as a waterproofing layer"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which factor is most critical when designing an isolated footing?",
+      "answers": {
+        "a": "Wind speed",
+        "b": "Soil bearing capacity",
+        "c": "Column height",
+        "d": "Beam Depth"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What type of reinforcement is commonly used in an RC isolated footing?",
+      "answers": {
+        "a": "Only stirrups",
+        "b": "Only longitudinal bars",
+        "c": "A combination of main bars and distribution bars",
+        "d": "No reinforcement is required"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which structural failure can occur if the footing is under-designed?",
+      "answers": {
+        "a": "Punching shear failure",
+        "b": "Thermal expansion failure",
+        "c": "Buckling failure",
+        "d": "Torsional failure"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the standard assumption in the design of an RC isolated footing?",
+      "answers": {
+        "a": "Soil pressure is linearly distributed",
+        "b": "Footing always experiences uniform settlement",
+        "c": "Concrete takes tension and compression equally",
+        "d": "Footings are independent of column load"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}

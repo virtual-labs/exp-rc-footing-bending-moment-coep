@@ -1,6 +1,22 @@
-### Theory
+## Theory
 
-Footing design is a critical aspect of structural engineering, ensuring that the loads from the superstructure are safely transmitted to the underlying soil without causing excessive settlement or structural failure.
+An **isolated footing** is used to support a single column and transfer its loads safely to the ground. When a **bending moment (M)** acts along with an **axial load (P)**, the pressure distribution beneath the footing becomes **non-uniform**. This requires careful design to ensure **stability, safety, and durability**.
+
+**Load Effects on Footing**
+
+A footing is subjected to:
+
+1.  **Axial Load ( P )** from the column.
+2.  **Bending Moment (M)** due to eccentricity or lateral forces.
+3.  **Self-weight of the footing (Wf).**
+4.  **Soil Pressure (q)**, which reacts against the applied loads.
+
+**Soil Pressure Distribution**
+
+-   **Uniform when only axial load is present.**
+-   **Linear when bending moment is applied.**
+
+**Condition to avoid uplift:** The minimum pressure at one edge must not be negative.
 
 ![1](images/figure1.png)
 

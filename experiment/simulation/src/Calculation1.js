@@ -11,6 +11,7 @@ var lfVal;
 var bfVal;
 function Calculation(){
 	
+	$("#page2Div1").html("<img src='images/configPage.png' class='img-fluid'>");
 	calFactLoad=parseFloat(workingPVal)*1.5;
 	calMomentLoad=parseFloat(workingMVal)*1.5;
 	var htm=''
@@ -235,10 +236,11 @@ function Calculation(){
 			    	toastr.info("Negative values are not allowed!");
 			    } 
 			    // Check min and max value
-			    else if (lfVal>=lowerLimit && lfVal<=upperLimit) {
+			    else if (lfVal>=lowerLimit ) {
 			 
-			    	calWeightFootingTemp=parseFloat(calAreaFooting/lfVal);
-			    	calWeightFooting=calWeightFootingTemp.toFixed(2);
+//			    	calWeightFootingTemp=parseFloat(calAreaFooting/lfVal);
+//			    	calWeightFooting=calWeightFootingTemp.toFixed(2);
+			    	calWeightFooting=3;
 			    	$("#lfVal").prop("disabled",true);
 			    	 $("#weightFootingDiv,#levelDiv2").prop("hidden",false);
 			    	 $("#weightFooting").html("<center>Width of footing(B<sub>f</sub>)m :"+calWeightFooting+" </center>");
@@ -265,7 +267,7 @@ function Calculation(){
 			    			"Total Load":calTotalLoad,
 			    			"Area Footing":calAreaFooting,
 			    			"Length Footing(L<sub>f</sub>)":lfVal,
-			    			"Weight Footing(B<sub>f</sub>)":calWeightFooting,
+			    			"Width Footing(B<sub>f</sub>)":calWeightFooting,
 			    	
 			    			};
 			    	jsonArray.push(tempMasterJson);

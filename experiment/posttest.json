@@ -2,67 +2,59 @@
   "version": 2.0,
   "questions": [
     {
-	
-      "question": "Critical section for two-way shear for isolated sloped footing shall be taken",
+      "question": "If the axial load on a footing increases, what is the most effective way to maintain structural safety?",
       "answers": {
-        "a": "at the face of the column",
-        "b": "at the center of column",
-        "c": "at a distance 'd' from the face of the column",
-        "d": "at a distance 'd/2' from the face of the column"
+        "a": "Decrease footing thickness",
+        "b": "Increase reinforcement and footing dimensions",
+        "c": "Reduce the grade of concrete used",
+        "d": "Ignore the change as concrete has high compressive strength"
       },
-      "correctAnswer": "d",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
-	
     {
-      "question": "The nominal minimum cover for footing shall be not less than:",
+      "question": "What happens if the soil bearing capacity is lower than expected?",
       "answers": {
-        "a": "40 mm",
-        "b": "50 mm",
-        "c": "20 mm",
-        "d": "10 mm"
+        "a": "The footing size should be increased",
+        "b": "The reinforcement should be decreased",
+        "c": "The column size should be reduced",
+        "d": "The load should be increased"
       },
-      "correctAnswer": "b",
+      "correctAnswer": "a",
       "difficulty": "beginner"
-    },	
- 
+    },
     {
-      "question": "The development length check for footing is normally critical in case of:",
+      "question": "How does an eccentric axial load affect the footing design?",
       "answers": {
-        "a": " soil of low bearing capacity",
-        "b": "soil of large bearing capacity",
-        "c": "independent of soil bearing capacity",
-        "d": "none from above"
+        "a": "Creates additional bending moment",
+        "b": "Reduces reinforcement requirements",
+        "c": "Has no impact on footing size",
+        "d": "Increases only the column dimensions"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which failure mode is most critical in an RC isolated footing under high axial load?",
+      "answers": {
+        "a": "Bending failure",
+        "b": "Punching shear failure",
+        "c": "Torsional failure",
+        "d": "Lateral buckling"
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
-  
-	
-	{
-      "question": "The size of a footing to support a reinforced concrete column depends upon the",
+    {
+      "question": "If the depth of the footing is increased significantly, which of the following statements is true?",
       "answers": {
-        "a": "grade of concrete in the column",
-        "b": "load transmitted to the footing by the column",
-        "c": "safe bearing pressure of the soil",
-        "d": "7"
+        "a": "Bending moment decreases, but punching shear increases",
+        "b": "Both bending moment and shear force increase",
+        "c": "The load-carrying capacity decreases",
+        "d": "There is no impact on structural performance"
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-	
-	{
-      "question": "The critical section to be considered for checking failure of footing against one way shear is at a distance equal to the",
-      "answers": {
-        "a": "larger dimension of the column from its face",
-        "b": "effective depth of the footing",
-        "c": "least lateral dimension of the column",
-        "d": "Never"
-      },
-      "correctAnswer": "c",
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
-	
- 
   ]
 }

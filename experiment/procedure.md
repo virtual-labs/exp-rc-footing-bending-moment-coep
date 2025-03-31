@@ -1,6 +1,6 @@
-### Procedure
+## Procedure
 
-##### Simulator :
+#### Simulator :
 
 - Enter Working Load (P) 
 - Select design values for concrete strength (fck)

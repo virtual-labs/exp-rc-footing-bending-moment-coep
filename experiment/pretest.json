@@ -2,67 +2,59 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "The thickness at the edge of the footing shall be not less than:",
+      "question": "What is the primary function of an RC isolated footing?",
       "answers": {
-        "a": "100 mm",
-        "b": "200 mm",
-        "c": "150 mm",
-        "d": "175 mm"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-
-	
-    {
-      "question": "The depth of the isolated sloped footing is normally governed by:",
-      "answers": {
-        "a": "bending moment consideration",
-        "b": "shear consideration",
-        "c": "development length consideration",
-        "d": "anchorage length consideration"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },	
- 
-    {
-      "question": "The greatest bending moment to be used for design of isolated sloped footing shall be the moment computed:",
-      "answers": {
-        "a": "at the face of the column",
-        "b": "at the center of column",
-        "c": "at a distance 'd' from the face of the column",
-        "d": "at a distance 'd/2' from the face of the column"
+        "a": "To transfer loads from columns to soil safely",
+        "b": "To provide aesthetic appeal to the structure",
+        "c": "To resist lateral loads only",
+        "d": "To act as a waterproofing layer"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
-  
-	
-	{
-      "question": "Critical section for one-way shear for isolated sloped footing shall be taken",
+    {
+      "question": "Which factor is most critical when designing an isolated footing?",
       "answers": {
-        "a": "at the face of the column",
-        "b": "at the center of column",
-        "c": "at a distance 'd' from the face of the column",
-        "d": "at a distance 'd/2' from the face of the column"
+        "a": "Wind speed",
+        "b": "Soil bearing capacity",
+        "c": "Column height",
+        "d": "Beam Depth"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What type of reinforcement is commonly used in an RC isolated footing?",
+      "answers": {
+        "a": "Only stirrups",
+        "b": "Only longitudinal bars",
+        "c": "A combination of main bars and distribution bars",
+        "d": "No reinforcement is required"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
     },
-	
-	{
-      "question": "In limit state method the permissible bearing stress shall be",
+    {
+      "question": "Which structural failure can occur if the footing is under-designed?",
       "answers": {
-        "a": "0.45 fck",
-        "b": "0.25 fck",
-        "c": "0.36 fck",
-        "d": "0.5 fck"
+        "a": "Punching shear failure",
+        "b": "Thermal expansion failure",
+        "c": "Buckling failure",
+        "d": "Torsional failure"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the standard assumption in the design of an RC isolated footing?",
+      "answers": {
+        "a": "Soil pressure is linearly distributed",
+        "b": "Footing always experiences uniform settlement",
+        "c": "Concrete takes tension and compression equally",
+        "d": "Footings are independent of column load"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     }
-	
- 
   ]
 }

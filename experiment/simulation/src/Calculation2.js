@@ -1,10 +1,10 @@
 
-var maxSigma,minSigma,faceSigma;
+var maxSigma,minSigma,faceSigma,sigmaVal;
 var  L;
 function Calculation2(){
 	$("#page3Div1").html("<img src='images/longershorter.png' class='img-fluid'>");
 	
-	
+
 	var htm=''
 		 +'<div class="row" id="" >'
 		   +'<div class="col-sm-12 steel" style="background-color:#0a4a54;">'	   
@@ -65,7 +65,7 @@ function Calculation2(){
 		   +'</div>'
 		   +'<div class="row calRowBorder" id="FaceDiv" hidden >'
 		   +'<div class="col-sm-5">'
-		   +'<label class="labelstyle ">&#963;(kN/m<sup2></sup>): </label>'
+		   +'<label class="labelstyle ">&#963; face(kN/m<sup2></sup>): </label>'
 		   +'</div>'	    
 		   +'<div class="col-sm-4">'
 		   +'<input type="number" id="faceVal" style= "width:100%;"  class="form-control" >'
@@ -205,7 +205,6 @@ function Calculation2(){
 				} else if (id2 == 3){
 					if (maxVal==maxSigma) {					
 						id2=0;		
-						id2=0;
 						 $("#maxSubmit,#maxVal").prop("disabled",true);
 						 $("#minDiv").prop("hidden",false);
 						 $("#maxMsg").html("<b class='boldTextBlue'>Go to next level");
@@ -289,20 +288,40 @@ var id3=0;
 		});
 		function compareSigma()
 		{
-//			if(parseFloat(maxSigma)>parseFloat(sbcVal)){
-//				
-//				$("#sigmaCompare").html("");
-//				var htm='<div class="col-sm-12">'	   
-//				   +'	<div class="alert alert-danger">'
-//			 	   +' 		<strong class="" id="sigmaCompare"><center>Max Sigma Value </center>'
-//			 	    +'</strong> '
-//				   +'	</div>'  
-//				   +'<button class="btn btn-danger glyphicon glyphicon-refresh" id="refreshBtn" style="float:right"><i style="font-size:24px" >Refresh</i></button>'
-//				 	
-//				   +'</div>'
-//				   $("#sigmaCompareDiv").html(htm);
-//			}
-//			else{
+			if(parseFloat(maxSigma)>parseFloat(sbcVal)){
+				
+				$("#sigmaCompare").html("");
+				var htm='<div class="col-sm-12">'	   
+				   +'	<div class="alert alert-danger">'
+			 	   +' 		<strong class="" id="sigmaCompare"><center>Max Sigma Value </center>'
+			 	    +'</strong> '
+				   +'	</div>'  
+				   +'<button class="btn btn-danger glyphicon glyphicon-refresh" id="refreshBtn" style="float:right" data-toggle="modal" data-target="#ModalMax"><i style="font-size:24px" >REVISE VALUE</i></button>'
+				   +' <!-- The Modal -->'
+				   +' <div class="modal fade" id="Modalrefresh">'
+				   +'   <div class="modal-dialog modal-xl">'
+				   +'     <div class="modal-content">'
+				       
+				   +'       <!-- Modal Header -->'
+				   +'       <div class="modal-header">'
+				   +'         <h4 class="modal-title">Message Box</h4>'
+				   +'        <button type="button" class="close" data-dismiss="modal">&times;</button>'
+				   +'      </div>'
+				   +'     <!-- Modal body -->'
+				   +'     <div class="modal-body" id="refreshMsg">'
+			       +'        Modal body..'
+			       +'      </div>'
+				   +'      <!-- Modal footer -->'
+			       +'      <div class="modal-footer">'
+			       +'        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'
+			       +'      </div>'
+				   +'     </div>'
+			       +'   </div>'
+			       +'  </div>'
+				   +'</div>'
+				   $("#sigmaCompareDiv").html(htm);
+			}
+			else{
 				var htm='<div class="col-sm-12">'	   
 					   +'	<div class="alert alert-primary">'
 				 	   +' 		<strong class="" id="sigmaCompare"><center>Max SBC Value</center></strong> '
@@ -311,7 +330,7 @@ var id3=0;
 					   $("#sigmaCompareDiv").html(htm);
 				$("#shorterDiv,#shorterCalDiv").prop("hidden",false);
 				
-//			}
+			}
 			
 			 $("#refreshBtn").click(function(){
 			        location.reload();
@@ -328,7 +347,7 @@ var id4=0;
 			var temp1=parseFloat(bfVal)*parseFloat(lfVal);
 			var temp2=parseFloat(calFactLoad)/temp1;
 			var sigmaTemp=temp2.toFixed(2);
-			var sigmaVal=sigmaTemp;
+			sigmaVal=sigmaTemp;
 			 if(shorterVal==""){			
 				$("#shorterMin").html("<b class='boldTextRed'>Enter numeric value ");
 			}else{
@@ -379,12 +398,13 @@ var id4=0;
 				
 				faceVal=$("#faceVal").val();
 				console.log("faceVal "+faceVal);
-			     var TempL=parseFloat(parseFloat(lfVal)-parseFloat(parseFloat(bcVal)*0.001)/2);
-				  L=TempL.toFixed(2);
-				  var temp1=(L+parseFloat(parseFloat(bcVal)*0.001));
-				  var temp2=parseFloat(maxSigma-minSigma/parseFloat(lfVal));
-				  var temp3=parseFloat(minSigma+temp2*temp1);
-				  faceSigma=temp3.toFixed(2);
+			     var tempL=parseFloat(parseFloat(lfVal)-parseFloat(parseInt(bcVal)*0.001));
+			     var tempF=parseFloat(tempL/2);
+				  L=tempF.toFixed(2);
+				  var ftemp1=parseFloat(parseFloat(L)+parseFloat(bcVal)*0.001);
+				  var ftemp2=parseFloat(maxSigma-minSigma/parseFloat(lfVal));
+				  var finaltemp3=parseFloat(parseFloat(minSigma)+ftemp2*ftemp1);
+				  faceSigma=finaltemp3.toFixed(2);
 				 if(faceVal==""){			
 					$("#faceMsg").html("<b class='boldTextRed'>Enter numeric value ");
 				}else{
@@ -397,7 +417,7 @@ var id4=0;
 						}	
 						else
 							{
-							$("#maxMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");		
+							$("#faceMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");		
 							}
 					} else if (id5 == 3){
 						if (faceVal==faceSigma) {					
@@ -424,4 +444,20 @@ var id4=0;
 					id5++;
 					}	 
 			});
+			$("#NextLevel3").click(function(){
+				
+		    	$("#page3").prop("hidden",true);
+		    	$("#page4").prop("hidden",false);
+		    	tempMasterJson = {
+		    			"&#963;Max":maxSigma,
+		    			"&#963;Min":minSigma,
+		    			"&#963;Shorter":sigmaVal,
+		    			"&#963;Face":faceSigma,
+		    			"L":L,
+		    			};
+		    	jsonArray.push(tempMasterJson);
+		    	MasterJson=jsonArray;
+		    	console.log(MasterJson);
+		    	Calculation3();
+	});
 }

@@ -8,7 +8,7 @@ function ConfigrationPage(){
 var selection =''
 	   +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle marginBottom">Enter working load(P) : </label>'
+	   +'<label class="labelstyle marginBottom">Enter working load P(kN) : </label>'
 	   +'</div>'
 	   +'<div class="col-sm-6">'
 	   +'<input type="number" id="workingPVal" style= "width:100%;"  class=" form-control marginBottom input-field"   >'
@@ -16,7 +16,7 @@ var selection =''
 	   +'</div>'
 	   +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle marginBottom">Enter working Moment(M) : </label>'
+	   +'<label class="labelstyle marginBottom">Enter working Moment M (kN/m) : </label>'
 	   +'</div>'
 	   +'<div class="col-sm-6">'
 	   +'<input type="number" id="workingMVal" style= "width:100%;"  class=" form-control marginBottom input-field"   >'
@@ -61,7 +61,7 @@ var selection =''
 	   +'</div>'
 	   +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle marginBottom">Size of column b<sub>c</sub>(mm) : </label>'
+	   +'<label class="labelstyle marginBottom">Size of column l(mm) : </label>'
 	   +'</div>'
 	   +'<div class="col-sm-6">'
 	   +'<input type="number" id="bcVal" style= "width:100%;"  class=" form-control marginBottom input-field"   >'
@@ -69,7 +69,7 @@ var selection =''
 	   +'</div>'
 	   +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle marginBottom"> d<sub>c</sub>(mm) : </label>'
+	   +'<label class="labelstyle marginBottom">Size of column b(mm) : </label>'
 	   +'</div>'
 	   +'<div class="col-sm-6">'
 	   +'<input type="number" id="dcVal" style= "width:100%;"  class=" form-control marginBottom input-field"   >'
@@ -80,7 +80,12 @@ var selection =''
 	   +'<label class="labelstyle marginBottom"> SBC of Soil(kN/m<sup>2</sup>) : </label>'
 	   +'</div>'
 	   +'<div class="col-sm-6">'
-	   +'<input type="number" id="sbcVal" style= "width:100%;"  class=" form-control marginBottom input-field"   >'
+//	   +'<input type="number" id="" style= "width:100%;"  class=" form-control marginBottom input-field"   >'
+	    +' <select class="form-control" id="sbcVal">'
+	    +' <option value="200">Medium strata</option>'
+	   +'  <option value="350">Hard strata</option>'
+	   +' </select>'
+	   
 	   +'</div>'
 	   +'</div>'
 	   +'<div class="row">'
@@ -105,8 +110,8 @@ $("#workingMVal").on("change", function () {
 	workingMVal= $(this).val();
 	let value =workingMVal;
     
-    let minValue = 100;  // Set your minimum value
-    let maxValue = 3000; // Set your maximum value
+    let minValue = 10;  // Set your minimum value
+    let maxValue = 200; // Set your maximum value
   
 
     // Check if input contains alphabets
@@ -131,8 +136,8 @@ $("#workingPVal").on("change", function () {
 	workingPVal= $(this).val();
 	let value =workingPVal;
     
-    let minValue = 100;  // Set your minimum value
-    let maxValue = 3000; // Set your maximum value
+    let minValue = 500;  // Set your minimum value
+    let maxValue = 1000; // Set your maximum value
   
 
     // Check if input contains alphabets
@@ -234,8 +239,9 @@ $("#sbcVal").on("change", function () {
 	
 	  sbcVal= $(this).val();
 		let value =sbcVal;
+		console.log("sbc "+value);
     let minValue = 150;  // Set your minimum value
-    let maxValue = 3300; // Set your maximum value
+    let maxValue = 3300; // Set yo	ur maximum value
   
 
     // Check if input contains alphabets

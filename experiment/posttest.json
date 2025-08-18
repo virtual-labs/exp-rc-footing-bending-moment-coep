@@ -55,6 +55,30 @@
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
+    },
+	
+    {
+      "question": "When only axial load acts on the footing, the soil pressure distribution is:",
+      "answers": {
+        "a": "Linear",
+        "b": "Uniform",
+        "c": "Parabolic",
+        "d": "Triangular"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+	
+    {
+      "question": "If Q-max  from factored load exceeds SBC, the designer should:",
+      "answers": {
+        "a": "Reduce footing size",
+        "b": "Increase footing size or adjust dimensions in the eccentric direction",
+        "c": "Increase axial load",
+        "d": "Ignore and proceed"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
     }
   ]
 }

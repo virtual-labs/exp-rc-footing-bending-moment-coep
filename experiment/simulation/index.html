@@ -302,6 +302,13 @@ $( document ).ready(function() {
         'hideMethod': 'fadeOut',
     }
 
+    $(document).ready(function(){
+      $('#customRange3').on('input change', function() {
+        $('#rangeValue').text($(this).val());
+      });
+    });
+
+
 </script>
 
 </html>

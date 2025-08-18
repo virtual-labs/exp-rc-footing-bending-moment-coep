@@ -55,6 +55,28 @@
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
+    },
+	{
+      "question": "Which of the following is NOT a type of shallow foundation?",
+      "answers": {
+        "a": "Isolated footing",
+        "b": "Combined footing",
+        "c": "Raft foundation",
+        "d": "Pile foundation"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "The main purpose of an isolated footing is to:",
+      "answers": {
+        "a": "Reduce the self-weight of the structure",
+        "b": "Transfer column loads safely to the soil",
+        "c": "Increase the column height",
+        "d": "Prevent corrosion of reinforcement"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
     }
   ]
 }

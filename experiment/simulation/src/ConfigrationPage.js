@@ -2,7 +2,7 @@ var workingPVal,workingMVal,concreteGrade,steelGrade,bcVal,dcVal,sbcVal,effVal;
 var jsonArray=[];
 concreteGrade=0;
 steelGrade=0;
-
+MasterJson={};
 function ConfigrationPage(){
 
 var selection =''
@@ -77,17 +77,31 @@ var selection =''
 	   +'</div>'
 	   +'<div class="row">'
 	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle marginBottom"> SBC of Soil(kN/m<sup>2</sup>) : </label>'
+	   +'<label class="labelstyle marginBottom"> Type of strata : </label>'
 	   +'</div>'
 	   +'<div class="col-sm-6">'
 //	   +'<input type="number" id="" style= "width:100%;"  class=" form-control marginBottom input-field"   >'
 	    +' <select class="form-control" id="sbcVal">'
-	    +' <option value="200">Medium strata</option>'
-	   +'  <option value="350">Hard strata</option>'
+	    +' <option value="-1">Select Type of strata</option>'
+	    +' <option value="Poor">Poor strata</option>'
+	    +' <option value="Medium">Medium strata</option>'
+	   +'  <option value="Hard">Hard strata</option>'
 	   +' </select>'
+	    +'</div>'
+	   +'</div>'
+	   +'<div class="row">'
+	   +'<div class="col-sm-6">'
+	   +'<label class="labelstyle marginBottom"> SBC of Soil(kN/m<sup>2</sup>) : </label>'
+	   +'</div>'
+	   +'<div class="col-sm-6">'
+
+	   +' <input type="range" class="form-range" min="" max="" step="5" id="customRange3" value="1" disabled>'
+	   +' <label for="customRange3" class="form-label"><span id="rangeValue"></span></label>'
+		
+	    +'</div>'
+	   +'</div>'
 	   
-	   +'</div>'
-	   +'</div>'
+	   
 	   +'<div class="row">'
 	   +'<div class="col-sm-6">'
 	   +'<label class="labelstyle marginBottom"> Effective cover d<sup>'+"'"+'</sup>(mm) : </label>'
@@ -104,6 +118,37 @@ var selection =''
   	   +'</div>'	   
   	   +'</div>'
 	   $("#page1Div2").html(selection);
+function updateRangeLimits(strata) {
+    let min, max;
+    if (strata === "Poor") {
+      min = 0;
+      max = 50;
+    } else if (strata === "Medium") {
+      min = 50;
+      max = 200;
+    } else if (strata === "Hard") {
+      min = 200;
+      max = 350;
+    }
+
+    $('#customRange3').attr('min', min).attr('max', max).val(min);
+    $('#rangeValue').text(min);
+  }
+
+
+    // On changing the dropdown
+    $('#sbcVal').on('change', function() {
+      updateRangeLimits($(this).val());
+      $("#customRange3").prop("disabled",false);
+      
+      
+    });
+    var rangeValue;
+    // Update value display on range change
+    $('#customRange3').on('input change', function() {
+      $('#rangeValue').text($(this).val());
+      rangeValue1=parseInt($("#rangeValue").text());
+    });
 
 $("#workingMVal").on("change", function () {
 	
@@ -235,32 +280,32 @@ $("#dcVal").on("change", function () {
     }
 
 });
-$("#sbcVal").on("change", function () {
-	
-	  sbcVal= $(this).val();
-		let value =sbcVal;
-		console.log("sbc "+value);
-    let minValue = 150;  // Set your minimum value
-    let maxValue = 3300; // Set yo	ur maximum value
-  
-
-    // Check if input contains alphabets
-    if (/[^0-9]/.test(value)) {
-    	$(this).val("");
-    	toastr.info("Only numbers allowed!");
-    } 
-    // Check for negative values
-    else if (value.startsWith("-")) {
-    	$(this).val("");
-    	toastr.info("Negative values are not allowed!");
-    } 
-    // Check min and max value
-    else if (value !== "" && (parseInt(value) < minValue || parseInt(value) > maxValue)) {
-    	$(this).val("");
-    	toastr.info("Value must be between "+minValue+" and "+maxValue);
-    }
-
-});
+//$("#sbcVal").on("change", function () {
+//	
+//	  sbcVal= $(this).val();
+//		let value =sbcVal;
+//		console.log("sbc "+value);
+//    let minValue = 150;  // Set your minimum value
+//    let maxValue = 3300; // Set yo	ur maximum value
+//  
+//
+//    // Check if input contains alphabets
+//    if (/[^0-9]/.test(value)) {
+//    	$(this).val("");
+//    	toastr.info("Only numbers allowed!");
+//    } 
+//    // Check for negative values
+//    else if (value.startsWith("-")) {
+//    	$(this).val("");
+//    	toastr.info("Negative values are not allowed!");
+//    } 
+//    // Check min and max value
+//    else if (value !== "" && (parseInt(value) < minValue || parseInt(value) > maxValue)) {
+//    	$(this).val("");
+//    	toastr.info("Value must be between "+minValue+" and "+maxValue);
+//    }
+//
+//});
 $("#effVal").on("change", function () {
 	
 	  effVal= $(this).val();
@@ -313,8 +358,8 @@ $("#NextLevel1").click(function(){
 	    			"Grade of concrete f<sub>ck</sub>(N/mm<sup>2</sup>)":concreteGrade,
 	    			"Grade of Steel f<sub>y</sub>(N/mm<sup>2</sup>)":steelGrade,
 	    			"Size of column b<sub>c</sub>(mm)":bcVal,
-	    			"d<sub>c</sub>(mm)":dcVal,
-	    			"SBC of Soil(N/mm<sup>2</sup>)":sbcVal,
+	    			"Depth of footing d<sub>c</sub>(mm)":dcVal,
+	    			"SBC of Soil":rangeValue1,
 	    			"Effective Cover(mm)":effVal,
 	    			};
 	    	jsonArray.push(tempMasterJson);

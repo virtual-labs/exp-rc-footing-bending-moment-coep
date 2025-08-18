@@ -221,7 +221,7 @@ function Calculation2(){
 						 $("#minDiv").prop("hidden",false);
 						 $("#maxMsg").html("<b class='boldTextBlue'>Go to next level");
 					} else {
-						$("#maxMsg").html("<b class='boldTextBlue'>Correct Answer "+maxSigma);
+						$("#maxMsg").html("<b class='boldTextBlue'>Correct Answer "+maxSigma+" (kN/m)");
 					}
 				}
 				id2++;
@@ -280,7 +280,7 @@ var id3=0;
 						compareSigma();
 						 $("#minMsg").html("<b class='boldTextBlue'>Go to next level");
 					} else {
-						$("#minMsg").html("<b class='boldTextBlue'>Correct Answer "+minSigma);
+						$("#minMsg").html("<b class='boldTextBlue'>Correct Answer "+minSigma+" (kN/m)");
 					}
 				}
 				id3++;
@@ -386,7 +386,7 @@ var id4=0;
 //						compareSigma();
 						 $("#shorterMin").html("<b class='boldTextBlue'>Go to next level");
 					} else {
-						$("#shorterMin").html("<b class='boldTextBlue'>Correct Answer "+sigmaVal);
+						$("#shorterMin").html("<b class='boldTextBlue'>Correct Answer "+sigmaVal+" (kN/m)");
 					}
 				}
 				id4++;
@@ -438,7 +438,7 @@ var id4=0;
 							 $("#levelDiv3").prop("hidden",false);
 							$("#faceMsg").html("<b class='boldTextBlue'>Go to next level");
 						} else {
-							$("#faceMsg").html("<b class='boldTextBlue'>Correct Answer "+faceSigma);
+							$("#faceMsg").html("<b class='boldTextBlue'>Correct Answer "+faceSigma+" (kN/m)");
 						}
 					}
 					id5++;
@@ -453,7 +453,7 @@ var id4=0;
 		    			"&#963;Min":minSigma,
 		    			"&#963;Shorter":sigmaVal,
 		    			"&#963;Face":faceSigma,
-		    			"L":L,
+		    			
 		    			};
 		    	jsonArray.push(tempMasterJson);
 		    	MasterJson=jsonArray;

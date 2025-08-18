@@ -9,8 +9,12 @@ var calLengthFooting;
 var calWeightFooting=0;
 var lfVal;
 var bfVal;
+ var sbc1;
+
+
 function Calculation(){
 	
+	sbc1 = rangeValue1;
 	$("#page2Div1").html("<img src='images/configPage.png' class='img-fluid'>");
 	calFactLoad=parseFloat(workingPVal)*1.5;
 	calMomentLoad=parseFloat(workingMVal)*1.5;
@@ -152,7 +156,7 @@ function Calculation(){
 			    	$("#safeWeightVal").prop("disabled",true);
 			    	calSelfWeightFooting=parseFloat(parseFloat(workingPVal)*parseFloat(safeWeightVal)/100);
 			    	calTotalLoad=parseFloat(calSelfWeightFooting+parseFloat(workingPVal));
-			    	calAreaFooting=parseFloat(parseFloat(calTotalLoad)/parseFloat(sbcVal));
+			    	calAreaFooting=parseFloat(parseFloat(calTotalLoad)/parseFloat(sbc1));
 			    
 			    	$("#selfWeightFooting").html("<center>Self weight of footing(kN) :"+calSelfWeightFooting+"</center>");
 			    	$("#totalLoad").html("<center>Total Load(kN) :"+calTotalLoad+"</center>");
@@ -170,7 +174,7 @@ function Calculation(){
 				 areaFooting=$("#areaFootingVal").val();
 				 console.log("areaFooting "+areaFooting);
 				 
-				 var temp2=parseFloat(calTotalLoad)/parseFloat(sbcVal);
+				 var temp2=parseFloat(calTotalLoad)/parseFloat(sbc1);
 				 calAreaFooting=temp2.toFixed(2);
 				
 				 if(areaFooting==""){			
@@ -208,7 +212,7 @@ function Calculation(){
 							 $("#lengthFootingDiv").prop("hidden",false);
 							 $("#ModalBodyAreaFootingMsg").html("<b class='boldTextBlue'>Go to next level");
 						} else {
-							$("#ModalBodyAreaFootingMsg").html("<b class='boldTextBlue'>Correct Answer "+calAreaFooting);
+							$("#ModalBodyAreaFootingMsg").html("<b class='boldTextBlue'>Correct Answer "+calAreaFooting+" (kN/m)");
 						}
 					}
 					id1++;
@@ -226,6 +230,11 @@ function Calculation(){
 				console.log("upperLimit "+upperLimit);
 			     // Set your minimum value
 			   // Check if input contains alphabets
+
+//		    	calWeightFootingTemp=parseFloat(calAreaFooting/lfVal);
+//		    	calWeightFooting=calWeightFootingTemp.toFixed(2);
+		    	
+		    	
 			    if (/[a-zA-Z]/.test(value)) {
 			        $(this).val("");
 			        toastr.info("Characters are not allowed! Only numbers.");
@@ -236,11 +245,12 @@ function Calculation(){
 			    	toastr.info("Negative values are not allowed!");
 			    } 
 			    // Check min and max value
-			    else if (lfVal>=lowerLimit ) {
+			    else if (lfVal>=lowerLimit  && upperLimit>=lfVal ) {
 			 
-//			    	calWeightFootingTemp=parseFloat(calAreaFooting/lfVal);
-//			    	calWeightFooting=calWeightFootingTemp.toFixed(2);
-			    	calWeightFooting=3;
+			    	var v1=parseFloat(parseFloat(calAreaFooting)/lfVal);
+			    	calWeightFooting = Math.ceil(v1 / 0.5) * 0.5;
+			    	console.log("calWeightFooting "+calWeightFooting); 
+			    	
 			    	$("#lfVal").prop("disabled",true);
 			    	 $("#weightFootingDiv,#levelDiv2").prop("hidden",false);
 			    	 $("#weightFooting").html("<center>Width of footing(B<sub>f</sub>)m :"+calWeightFooting+" </center>");

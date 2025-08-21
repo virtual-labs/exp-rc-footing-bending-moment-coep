@@ -40,27 +40,27 @@ Material Properties: The design considers the compressive strength of concrete (
 
 ### Design Steps:
 
-##### Define Design Parameters:
+#### Define Design Parameters:
 Specify the applied axial load (Pu) on the column.
 Determine the allowable soil bearing capacity (SBC) from geotechnical investigations.
 Choose design values for concrete strength (fck) and steel yield strength (fy) based on material specifications and code requirements.
 
-##### Footing Size Calculation:
+#### Footing Size Calculation:
 Calculate the minimum required area (A) of the footing by dividing the applied load (Pu) by the allowable SBC (Pu = A * SBC).
 Considering constructability and potential eccentricity of the load, choose a preliminary rectangular or square footing shape with dimensions (B x L).
 
-##### Check for Bearing Capacity Exceedance: 
+#### Check for Bearing Capacity Exceedance: 
 Verify the actual bearing pressure (Pu / B x L) on the soil is less than or equal to the allowable SBC.
 
-##### Footing Depth Selection: 
+#### Footing Depth Selection: 
 Considering factors like frost depth, drainage requirements, and embedment for stability, select a suitable depth (D) for the footing.
 
-##### Structural Analysis:
+#### Structural Analysis:
 Divide the footing into critical sections (typically at the face of the column and mid-span between the column and edges).
 Assume a simplified load distribution (e.g., trapezoidal or uniformly distributed load) on the footing based on the column position (centric or eccentric).
 Calculate the bending moments and shear forces acting on the critical sections using engineering mechanics principles.
 
-##### Reinforcement Design:
+#### Reinforcement Design:
 Based on the bending moments and code provisions, calculate the required area of steel reinforcement (Asc) for the footing slab in both directions (longitudinal and transverse).
 Select appropriate bar diameter and spacing for the top and bottom reinforcement layers.
 Ensure proper concrete cover thickness for durability as specified by building codes.
